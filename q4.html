@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q4 Counter</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        #count {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Counter Using LocalStorage</h2>
+
+<button id="minus">−</button>
+<span id="count">0</span>
+<button id="plus">+</button>
+
+<script>
+    // Load stored value or set to 0
+    let count = localStorage.getItem("count")
+        ? Number(localStorage.getItem("count"))
+        : 0;
+
+    document.getElementById("count").innerText = count;
+
+    // Increase
+    document.getElementById("plus").onclick = () => {
+        count++;
+        localStorage.setItem("count", count);
+        document.getElementById("count").innerText = count;
+    };
+
+    // Decrease
+    document.getElementById("minus").onclick = () => {
+        count--;
+        localStorage.setItem("count", count);
+        document.getElementById("count").innerText = count;
+    };
+</script>
+
+</body>
+</html>

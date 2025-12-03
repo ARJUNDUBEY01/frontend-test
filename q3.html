@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Q3 Box Responsive</title>
+    <style>
+        .myBox {
+            width: 250px;
+            padding: 20px;
+            margin: 20px;
+            border: 3px solid black;
+            background: lightgray;
+            display: none;   /* hidden by default */
+        }
+
+        /* Show only ABOVE 500px */
+        @media (min-width: 500px) {
+            .myBox {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Box visible only above 500px screen width</h2>
+
+<div class="myBox">
+    This box is only visible when screen width is above 500px.
+</div>
+
+</body>
+</html>
